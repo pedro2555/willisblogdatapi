@@ -1,0 +1,7 @@
+{
+	"name": "willis blog datapi",
+	"description": "Blog Data API reads relevant Wordpress content",
+	"repository": "https://github.com/pedro2555/willisblogdatapi",
+	"keywords": ["python"],
+	"addons": []
+}
