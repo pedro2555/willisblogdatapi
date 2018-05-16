@@ -1,10 +1,20 @@
 #!/bin/bash python
 
 from eve import Eve
+import os
 import pymysql
 import json
 
 app = Eve()
+
+if 'PORT' in os.environ:
+    port = os.environ.get('PORT')
+    host = '0.0.0.0'
+    debug = False
+else:
+    port = 5000
+    host = '0.0.0.0'
+    debug = True
 
 @app.route('/legacyposts')
 def legacyposts():
@@ -40,5 +50,5 @@ def legacyposts():
     return json.dumps(posts)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host=host, port=port, debug=debug)
 
